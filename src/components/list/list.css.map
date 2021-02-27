@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGI,eAAE,CACE,OAAO,CAAE,KAAK,CACd,UAAU,CAAE,IAAI,CAChB,SAAS,CAAE,IAAI,CACf,KAAK,CCPD,OAAO,CDQX,OAAO,CAAE,SAAS,CAClB,aAAa,CAAE,cAAqB,CACpC,cAAc,CAAE,MAAM,CAC1B,cAAC,CACG,YAAY,CAAE,IAAI,CAClB,SAAS,CAAE,IAAI,CACf,KAAK,CCZJ,OAAO",
+"sources": ["list.sass","../../sass/_colors.sass"],
+"names": [],
+"file": "list.css"
+}

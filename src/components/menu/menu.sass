@@ -1,0 +1,35 @@
+@import '../../sass/_colors'
+
+.main-menu
+    background-color: $dark-gray
+    display: flex
+    position: fixed
+    bottom: 0
+    width: 100%
+
+    @media only screen and (min-width: 376px)
+        position: relative
+        width: auto
+        min-width: 300px
+        display: block
+        order: -1
+    a
+        color: $light-gray
+        font-size: 12px
+        text-transform: uppercase
+        flex-grow: 3
+        padding: 15px 0
+        letter-spacing: 1px
+        transition: all ease-out 0.3s
+        box-sizing: border-box
+        text-align: center
+        @media only screen and (min-width: 376px)
+            border-bottom: 1px solid $light-gray
+            display: block
+        &.active
+            color: $orange
+            pointer-events: none
+            border-top: 2px solid $orange
+            @media only screen and (min-width: 376px)
+                border-top: none
+                border-bottom: 2px solid $orange

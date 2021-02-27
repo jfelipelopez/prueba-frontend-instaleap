@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Challenge Frontend para Instaleap
+### 1. Components:
+- **App.js:** Se utiliza el provider de redux para cargar la data del endpoint en el "state" centralizado para toda la app. Tambien se empaqueta la app en el "BrowserRouter" para poder generar la navegación.
+- **main.js**: Componente base donde se envía la data necesaria a los demas componetes.
+Ademas, en este componente se crea el redireccionamiento a las url de las diferentes vistas que componen la plicación y se crea su estructura base (header - lista de elementos - menu).
+- **menu.js**: Es el menú de la aplicación. Contiene los botones de navegación/filtro para las categorias de series y peliculas. Valida el estado activo del botón por medio de la propiedad "currentpage" que contiene el "location.pathname" de la aplicación. 
+- **list.js**: Es el componente encargado de recorrer el arreglo de las películas y series para pintarlas en su respectiva vista. Valida si es película o serie para asignarle su respectivo icono.
+-  **home.js / movies.js / series.js**: Son los componentes para cada vista. Filtran el arreglo de películas y series para eniarlos al list.js.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 2. Redux:
+- **ActionCreators.js:** Crea el llamado de la data al endpoint y crea los casos para el manejo de la respuesta.
+- **configureStore.js:** Configura como se carga la data en la aplicación por medio del "store".
+- **movies.js:** Administra los diferentes casos para crear el objeto final que se cargara en la aplicación en el "store".
 
-## Available Scripts
+### 3. Estilos:
+La aplicación es responisve ajustando los estilos para Desktop y Mobile, hechos pensando Mobile First.
+Cada componente tiene su propia hoja de estilos que contiene unicamente los estilos de este. Ademas hay 2 archivos .sass que contienen recursos de estilos utilizados por todos los componentes. Estos archivos son:
+- **colors.sass:** Contiene las variables con los colores utilizados en la app.
+- **fonts.sass:** Importa las fuentes utilizadas en la app.
+- **icons.sass:** (Dentro de la carpeta de icons) Enlaza los archivos de las fuentes 
 
-In the project directory, you can run:
+### 4. Icons:
+En la carpeta de "icons" se encuentran los archivos de las fuentes de los iconos y el sas donde asigna las entidades correspondientes a los iconos a una clase de css.
 
-### `npm start`
+### 5. Pruebas unitarias:
+Creé un ejemplo de prueba unitaria para la vista de "home" en la que se comprueba que se esten renderizando todos los elementos del arreglo de peliculas y series.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 6. Herramientas utilizadas:
+- **react-router-dom:** Permite crear la navegación en la aplicación por medio del cambio de la url de forma asicrona.
+- **redux:** Permite centralizar el "state" de la aplicación y ayuda a hacer el consumo de servicios de manera organizada.
+- **react-transition-group:** Para crear la transición en el cambio de una visata a otra.
+- **SASS:** Los estilos de la aplicación fueron creados con SASS hacerlo mas rapida y limpia y para tener utilidades como las variables.
+- **enzyme:** Para realizar pruebas unitarias.
